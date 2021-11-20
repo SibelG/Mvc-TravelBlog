@@ -1,0 +1,32 @@
+﻿@using TravelBlog.Models.Sınıflar
+@model List<Address>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="contact-bottom">
+    <div class="contact-left">
+        @foreach (var x in Model)
+        {
+
+
+            <div class="contact-add" style="margin-top:30px">
+
+                <h3>@x.Baslik</h3>
+                <p>@x.Aciklama</p>
+                <p>@x.Tel</p>
+                <p>@x.Fax</p>
+                <p>Email:<a href="@x.Email">@x.Email</a></p>
+
+            </div>
+        }
+    </div>
+
+    <div class="clear"></div>
+    @Html.Action("MakeContact", "Contact")
+</div>
+
+
+
+

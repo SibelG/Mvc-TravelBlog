@@ -1,0 +1,25 @@
+﻿@model TravelBlog.Models.Sınıflar.Comment
+<div class="content-form">
+    <h3>Leave a comment</h3>
+    @ViewBag.deger
+    @*<form>
+            <input type="text" placeholder="Name" required />
+            <input type="text" placeholder="Email" required />
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="SEND" />
+        </form>*@
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @placeholder = "ID",@value="@ViewBag.deger", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.KullaniciAdi)
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", @placeholder = "username" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @placeholder = "email" })
+    <br />
+    @Html.LabelFor(x => x.Comments)
+    @Html.TextAreaFor(x => x.Comments, new { @class = "form-control", @placeholder = "message" })
+    <br />
+    <button class="btn btn-success">Send</button>
+    <br />
+</div>

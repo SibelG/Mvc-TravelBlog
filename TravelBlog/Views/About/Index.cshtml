@@ -1,0 +1,26 @@
+﻿@using TravelBlog.Models.Sınıflar
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+
+            @foreach (var x in Model)
+            {
+            <div>
+                <img src="@x.ResimUrl" alt="" style="margin-top:50px;margin-bottom:10px;height:500px;margin-right:90px;margin-left:90px" />
+                <p style="margin-left:90px">@x.Aciklama</p>
+            </div>
+                
+                
+
+            }
+
+        </div>
+    </div>
+</div>
+

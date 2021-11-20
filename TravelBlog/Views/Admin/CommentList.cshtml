@@ -1,0 +1,36 @@
+﻿@using TravelBlog.Models.Sınıflar
+@model List<Comment>
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CommentList</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Mail</th>
+        <th>Comment</th>
+        <th>Blog</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.KullaniciAdi</td>
+            <td>@x.Mail</td>
+            <td>@x.Comments</td>
+            <td>@x.Blog.Baslik</td>
+            <td><a href="/Admin/CommentDelete/@x.ID" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Admin/GetComment/@x.ID" class="btn btn-warning">Update</a></td>
+        </tr>
+
+        }
+
+    </tbody>
+</table>
